@@ -12,9 +12,30 @@ A satisfactory 3D Engine that works for roblox.
 
 ## How To Use
 Just require the key modules like the Engine3D module, Camera modules, and ModelLoader module.
-Make sure to use this on the client because that is what it is designed for.
+Make sure to use this on the client because that is what it is designed for. Make sure to place all the modules inside ReplicatedStorage, and place the ScreenGui into StarterGui. You do need some scripting knowledge to use this.
 - For the engine to read an object, it needs to be in a certain structure. The object needs to only contain triangles and also needs to have a texture. To create a texture and save it, use the [CanvasDraw Image Importer] and set the texture in the object to the name of the newly created folder.
 > Note: Textures can only be at max 256x256 pixels. This also includes the screen size.
+
+# Using The Tools
+For the ModelLoader Module, you can add new models to the scene by using the ``ModelLoader.LoadFromName(Name)`` function. Pass in an object name that is in the `Objects` folder, and it creates a new model which you can edit in real time. Once you have a new Model, you can do whatever you want with it! Heres some examples:
+```lua
+-- Making a cube and performing translations
+local Cube = ModelLoader.LoadFromName("Cube")
+Cube.CFrame = Cube.CFrame * CFrame.Angles(math.rad(1), 0, 0)
+Cube.Size = Vector3.new(5,5,5)
+Cube:SetColor(255, 0, 0)
+```
+```lua
+-- Using the Weld module to create joints
+local Torso = ModelLoader.LoadFromName("Cube")
+local Arm = ModelLoader.LoadFromName("Cube")
+
+Torso.Size = Vector3.new(2,2,1)
+Arm.Size = Vector3.new(1,2,1)
+
+local Joint = WeldModule.new("Shoulder", Torso, Arm, CFrame.new(0,0,0), CFrame.new(0,0,0))
+Joint.C0 = Joint.C0 * CFrame.Angles(math.rad(1), 0, 0)
+```
 
 ## Other Information
 To draw to the screen on Roblox, my engine uses the [CanvasDraw] module. I do not own this module, and it is only as optimized as the creator made it to be.
