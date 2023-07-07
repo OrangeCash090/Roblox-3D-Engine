@@ -1,11 +1,8 @@
 -- Modules --
 local Engine3D = require(Modules.Engine3D)
 local ModelLoader = require(Modules.ModelLoader)
-local Collision = require(Modules.Collision)
 local CameraModule = require(Modules.Camera)
 local WeldModule = require(Modules.Weld)
-local AnimationModule = require(Modules.Animation)
-local PlayerModule = require(Modules.Player)
 
 local Mouse = game.Players.LocalPlayer:GetMouse()
 local Camera = CameraModule.new(Vector3.new(0,5,0), Vector3.zero, 1/50, "Freecam")
