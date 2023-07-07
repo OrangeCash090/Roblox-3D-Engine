@@ -18,6 +18,7 @@ Make sure to use this on the client because that is what it is designed for.
 
 ## Other Information
 To draw to the screen on Roblox, my engine uses the [CanvasDraw] module. I do not own this module, and it is only as optimized as the creator made it to be.
+This also uses ported code from Python which this guy made: https://www.youtube.com/c/@FinFet
 I will also be updating this repository to fix other bugs or use other methods. If you are using this, __please credit me__.
 > Note: This engine is not perfect, it still needs to be optimized more. Large amounts of triangles impact performance, and so does a lot of colors at once.
 
