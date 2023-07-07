@@ -11,6 +11,7 @@ local World = Engine3D.new(script.Parent.Screen, Vector2.new(128,128), Camera, 7
 local Cube = ModelLoader.LoadFromName("Cube")
 
 game:GetService("RunService").RenderStepped:Connect(function(dt)
+	Cube.CFrame = Cube.CFrame * CFrame.new(0, 0, -0.1) * CFrame.Angles(0,math.rad(1),0)
 	Camera:Update(true)
 	World:Update()
 end)
