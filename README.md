@@ -18,7 +18,7 @@ Make sure to use this on the client because that is what it is designed for.
 
 ## Other Information
 To draw to the screen on Roblox, my engine uses the [CanvasDraw] module. I do not own this module, and it is only as optimized as the creator made it to be.
-I will also be updating this repository to fix other bugs or use other methods. If you are using this, _please credit me_.
+I will also be updating this repository to fix other bugs or use other methods. If you are using this, __please credit me__.
 > Note: This engine is not perfect, it still needs to be optimized more. Large amounts of triangles impact performance, and so does a lot of colors at once.
 
 [CanvasDraw]: <https://devforum.roblox.com/t/canvasdraw-a-powerful-pixel-based-graphics-engine-draw-pixels-lines-triangles-read-png-image-data-and-much-more/1624633>
