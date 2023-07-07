@@ -22,5 +22,8 @@ This also uses ported code from Python which this guy made: https://www.youtube.
 I will probably be updating this repository to fix other bugs or use other methods. If you are using this, __please credit me__.
 > Note: This engine is not perfect, it still needs to be optimized more. Large amounts of triangles impact performance, and so does a lot of colors at once.
 
+- el gato
+![el gato](Screenshots/image.png)
+
 [CanvasDraw]: <https://devforum.roblox.com/t/canvasdraw-a-powerful-pixel-based-graphics-engine-draw-pixels-lines-triangles-read-png-image-data-and-much-more/1624633>
 [CanvasDraw Image Importer]: <https://create.roblox.com/marketplace/asset/8580432843/CanvasDraw-Image-Importer>
