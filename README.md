@@ -14,7 +14,7 @@ A satisfactory 3D Engine that works for roblox.
 Just require the key modules like the Engine3D module, Camera modules, and ModelLoader module.
 Make sure to use this on the client because that is what it is designed for.
 - For the engine to read an object, it needs to be in a certain structure. The object needs to only contain triangles and also needs to have a texture. To create a texture and save it, use the [CanvasDraw Image Importer] and set the texture in the object to the name of the newly created folder.
-> Note: Textures can only be at max 256x256 pixels.
+> Note: Textures can only be at max 256x256 pixels. This also includes the screen size.
 
 ## Other Information
 To draw to the screen on Roblox, my engine uses the [CanvasDraw] module. I do not own this module, and it is only as optimized as the creator made it to be.
