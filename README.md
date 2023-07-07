@@ -32,9 +32,9 @@ Cube.Size = Vector3.new(5,5,5)
 Cube:SetColor(255, 0, 0)
 
 game:GetService("RunService").RenderStepped:Connect(function(dt)
-    Cube.CFrame = Cube.CFrame * CFrame.Angles(math.rad(1), 0, 0)
-	  Camera:Update(true)
-	  World:Update()
+	Cube.CFrame = Cube.CFrame * CFrame.Angles(math.rad(1), 0, 0)
+	Camera:Update(true)
+	World:Update()
 end)
 ```
 ```lua
@@ -56,10 +56,10 @@ Arm.Size = Vector3.new(1,2,1)
 local Joint = WeldModule.new("Shoulder", Torso, Arm, CFrame.new(0,0,0), CFrame.new(0,0,0))
 
 game:GetService("RunService").RenderStepped:Connect(function(dt)
-    Joint.C0 = Joint.C0 * CFrame.Angles(math.rad(1), 0, 0)
-	  Camera:Update(true)
-	  World:Update()
-    WeldModule:Update()
+	Joint.C0 = Joint.C0 * CFrame.Angles(math.rad(1), 0, 0)
+	Camera:Update(true)
+	World:Update()
+	WeldModule:Update()
 end)
 ```
 ```lua
@@ -75,9 +75,9 @@ local Sound = workspace.Sound
 local Cube = ModelLoader.new("Cube")
 
 game:GetService("RunService").RenderStepped:Connect(function(dt)
-    Cube.Size = Vector3.new(1, (Sound.PlaybackLoudness/140) + 0.1, 1)
-	  Camera:Update(true)
-	  World:Update()
+	Cube.Size = Vector3.new(1, (Sound.PlaybackLoudness/140) + 0.1, 1)
+	Camera:Update(true)
+	World:Update()
 end)
 ```
 
