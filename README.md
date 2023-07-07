@@ -9,3 +9,5 @@ A satisfactory 3D Engine that works for roblox.
 - Support for CFrame Matrices
 - Model functions like moving, rotating and sizing
 - And much more!
+
+## How To Use
