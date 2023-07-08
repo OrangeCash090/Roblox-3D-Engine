@@ -75,7 +75,7 @@ local Sound = workspace.Sound
 local Cube = ModelLoader.LoadFromName("Cube")
 
 game:GetService("RunService").RenderStepped:Connect(function(dt)
-	Cube.Size = Vector3.new(1, (Sound.PlaybackLoudness/140) + 0.1, 1)
+	Cube.Size = Vector3.new(1, (Sound.PlaybackLoudness/100) + 0.1, 1)
 	Camera:Update(true)
 	World:Update()
 end)
