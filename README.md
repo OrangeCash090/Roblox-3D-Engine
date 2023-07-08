@@ -13,7 +13,7 @@ A satisfactory 3D Engine that works for roblox.
 ## How To Use
 First, you need to set up a ScreenGui, a LocalScript, and a Frame that acts as a screen for CanvasDraw to draw on. 
 ![Example1](Screenshots/image2.png)
-Once you have that, make sure to place all the modules inside ReplicatedStorage.
+\nOnce you have that, make sure to place all the modules inside ReplicatedStorage.
 ![Example1](Screenshots/image3.png)
 Then, inside the LocalScript, paste in some example code that is found below to try it out! When you have the engine and its code all set up, you can use WASD to move and the mouse to rotate your camera.
 - For the engine to read an object, it needs to be in a certain structure. You can find an example of this structure inside [Objects/Cube.lua]. The object needs to only contain triangles and also needs to have a texture. To create a texture and save it, use the [CanvasDraw Image Importer] and set the texture in the object to the name of the newly created folder.
