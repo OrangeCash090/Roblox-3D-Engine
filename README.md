@@ -11,7 +11,7 @@ A satisfactory 3D Engine that works for roblox.
 - And much more!
 
 ## How To Use
-First, you need to set up a ScreenGui, a LocalScript, and a Frame that acts as a screen for CanvasDraw to draw on. 
+First, you need to set up a ScreenGui, a LocalScript, and a Frame that acts as a screen for CanvasDraw to draw on.\
 ![Example1](Screenshots/image2.png)\
 Once you have that, make sure to place all the modules inside ReplicatedStorage.\
 ![Example1](Screenshots/image3.png)\
