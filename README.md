@@ -11,9 +11,12 @@ A satisfactory 3D Engine that works for roblox.
 - And much more!
 
 ## How To Use
-Just require the key modules like the Engine3D module, Camera modules, and ModelLoader module.
-Make sure to use this on the client because that is what it is designed for. Make sure to place all the modules inside ReplicatedStorage, and place the ScreenGui into StarterGui. You do need some scripting knowledge to use this. When you have it all set up, you can use WASD to move and the mouse to rotate your camera.
-- For the engine to read an object, it needs to be in a certain structure. The object needs to only contain triangles and also needs to have a texture. To create a texture and save it, use the [CanvasDraw Image Importer] and set the texture in the object to the name of the newly created folder.
+First, you need to set up a ScreenGui, a LocalScript, and a Frame that acts as a screen for CanvasDraw to draw on. 
+![Example1](Screenshots/image2.png)
+Once you have that, make sure to place all the modules inside ReplicatedStorage.
+![Example1](Screenshots/image3.png)
+Then, inside the LocalScript, paste in some example code that is found below to try it out! When you have the engine and its code all set up, you can use WASD to move and the mouse to rotate your camera.
+- For the engine to read an object, it needs to be in a certain structure. You can find an example of this structure inside [Objects/Cube.lua]. The object needs to only contain triangles and also needs to have a texture. To create a texture and save it, use the [CanvasDraw Image Importer] and set the texture in the object to the name of the newly created folder.
 > Note: Textures can only be at max 256x256 pixels. This also includes the screen size.
 
 # Using The Tools
@@ -91,3 +94,4 @@ I will probably be updating this repository to fix other bugs or use other metho
 
 [CanvasDraw]: <https://devforum.roblox.com/t/canvasdraw-a-powerful-pixel-based-graphics-engine-draw-pixels-lines-triangles-read-png-image-data-and-much-more/1624633>
 [CanvasDraw Image Importer]: <https://create.roblox.com/marketplace/asset/8580432843/CanvasDraw-Image-Importer>
+[Objects/Cube.lua]: <https://github.com/OrangeCash090/Roblox-3D-Engine/blob/main/Objects/Cube.lua>
