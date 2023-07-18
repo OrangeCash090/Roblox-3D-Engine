@@ -301,6 +301,7 @@ local function draw_text_triangle(frame, z_buffer, texture, text_size, shade, st
 			for x = min_x, max_x do
 				local delta_x = x - x1
 				local z = 1 / (z1 + (delta_x * z_slope) + 1e-32) -- retrieve z
+
 				if z < z_buffer[x][y] then -- check z buffer
 					local u = (u1 + (delta_x * u_slope)) * z -- multiply by z to go back to uv space
 					local v = (v1 + (delta_x * v_slope)) * z -- multiply by z to go back to uv space
@@ -362,24 +363,19 @@ local function draw_model(frame, points, triangles, camera, light_dir, z_buffer,
 				local v_slopes = get_slopes(uv_start[2], uv_middle[2], uv_stop[2], start[2], middle[2], stop[2])
 
 				draw_text_triangle(frame, z_buffer, texture, text_size, shade, start, middle, stop, x_slopes, z_slopes, uv_start, uv_middle, u_slopes, v_slopes)
+				Engine3D.TrianglesProccessed+=1
 			end
 		end
 	end
 end
 
-local function DrawToScreen(frame)
+local function DrawToScreen(frame, z_buffer)
 	for y=1, #frame do
 		for x=1, #frame do
 			Engine3D.Canvas:SetPixel(x, y, Color3.fromRGB(frame[x][y][1], frame[x][y][2], frame[x][y][3]))
-		end
-	end
-end
-
-local function ClearScreen(frame, z_buffer)
-	for y=1, #frame do
-		for x=1, #frame do
-			frame[x][y] = {0,0,0}
-			z_buffer[x][y] = 1e32
+			
+			frame[x][y] = {}
+			z_buffer[x][y] = 64 -- how to like do distance view thing
 		end
 	end
 end
@@ -399,16 +395,18 @@ function Engine3D.new(Frame, ScreenSize, Camera, FOV, Debug)
 	Engine3D.FOV = math.rad(FOV) -- math.rad(70)
 	Engine3D.FOV_H = Engine3D.FOV*ScreenSize.X/ScreenSize.Y
 	Engine3D.UVDebug = Debug
+	Engine3D.TrianglesProccessed = 0
 
 	World.Camera = Camera
 	World.Time = 0
 	
 	local frame = Numpy.Custom2({0,0,0}, Engine3D.ScreenSize.X, Engine3D.ScreenSize.Y, 3)
-	local z_buffer = Numpy.Custom2(1e32, Engine3D.ScreenSize.X, Engine3D.ScreenSize.Y)
+	local z_buffer = Numpy.Custom2(1000, Engine3D.ScreenSize.X, Engine3D.ScreenSize.Y)
 	
 	local light_dir = Vector3.new(math.sin(os.clock()), 1, 1).Unit
 
 	function World:Update()
+		Engine3D.TrianglesProccessed = 0
 		for i,Model in pairs(ModelLoader._Registry) do
 			project_points(Model.points, World.Camera)
 			draw_model(frame, Model.points, Model.triangles, World.Camera, light_dir, z_buffer, Model.textured, Model.texture_uv, Model.texture_map, Model.texture)
@@ -416,12 +414,15 @@ function Engine3D.new(Frame, ScreenSize, Camera, FOV, Debug)
 		end
 
 		--DrawUV(frame, {#Cube.texture, #Cube.texture[1]}, Cube)
-		DrawToScreen(frame)
-		ClearScreen(frame, z_buffer)
+		DrawToScreen(frame, z_buffer)
 		World.Time+=1
 	end
 
 	return World
 end
--- ollollollololort tpgtahc htiw edaM
+
 return Engine3D
+
+-- TODO: get rid of triangle indices and just put the triangles in there!
+-- its so bad so just get rid of it :skull:
+-- REPLACE CANVASDRAW IT SUC
