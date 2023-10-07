@@ -31,6 +31,11 @@ local CameraModule = require(game.ReplicatedStorage.Camera)
 local Camera = CameraModule.new(Vector3.new(0,5,0), Vector3.new(0, 0, 0), 1/50, true)
 local World = Engine3D.new(script.Parent.Parent.Screen, Camera, Vector2.new(256, 200), 70, 1000, false)
 
+local Sky = ModelLoader.LoadFromName("Cube")
+Sky.Size = Vector3.new(-1000, -1000, -1000)
+Sky.CanCollide = false
+Sky:SetColor(0, 0, 0)
+
 local Cube = ModelLoader.LoadFromName("Cube")
 Cube.Size = Vector3.new(5,5,5)
 Cube:SetColor(255, 0, 0)
@@ -50,6 +55,11 @@ local WeldModule = require(game.ReplicatedStorage.Weld)
 
 local Camera = CameraModule.new(Vector3.new(0,5,0), Vector3.new(0, 0, 0), 1/50, true)
 local World = Engine3D.new(script.Parent.Parent.Screen, Camera, Vector2.new(256, 200), 70, 1000, false)
+
+local Sky = ModelLoader.LoadFromName("Cube")
+Sky.Size = Vector3.new(-1000, -1000, -1000)
+Sky.CanCollide = false
+Sky:SetColor(0, 0, 0)
 
 local Torso = ModelLoader.LoadFromName("Cube")
 local Arm = ModelLoader.LoadFromName("Cube")
@@ -71,6 +81,11 @@ end)
 local Engine3D = require(game.ReplicatedStorage.Engine3D)
 local ModelLoader = require(game.ReplicatedStorage.ModelLoader)
 local CameraModule = require(game.ReplicatedStorage.Camera)
+
+local Sky = ModelLoader.LoadFromName("Cube")
+Sky.Size = Vector3.new(-1000, -1000, -1000)
+Sky.CanCollide = false
+Sky:SetColor(0, 0, 0)
 
 local Camera = CameraModule.new(Vector3.new(0,5,0), Vector3.new(0, 0, 0), 1/50, true)
 local World = Engine3D.new(script.Parent.Parent.Screen, Camera, Vector2.new(256, 200), 70, 1000, false)
