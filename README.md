@@ -28,14 +28,14 @@ local Engine3D = require(game.ReplicatedStorage.Engine3D)
 local ModelLoader = require(game.ReplicatedStorage.ModelLoader)
 local CameraModule = require(game.ReplicatedStorage.Camera)
 
-local Camera = CameraModule.new(Vector3.new(0,5,0), Vector3.zero, 1/50, "Freecam")
-local World = Engine3D.new(script.Parent.Screen, Vector2.new(128,128), Camera, 70, 1000, false)
+local Camera = CameraModule.new(Vector3.new(0,5,0), Vector3.new(0, 0, 0), 1/50, true)
+local World = Engine3D.new(script.Parent.Parent.Screen, Camera, Vector2.new(256, 200), 70, 1000, false)
 
 local Cube = ModelLoader.LoadFromName("Cube")
 Cube.Size = Vector3.new(5,5,5)
 Cube:SetColor(255, 0, 0)
 
-game:GetService("RunService").RenderStepped:Connect(function()
+game:GetService("RunService").RenderStepped:ConnectParallel(function()
 	Cube.CFrame = Cube.CFrame * CFrame.Angles(math.rad(1), 0, 0)
 	Camera:Update()
 	World:Update()
@@ -48,8 +48,8 @@ local ModelLoader = require(game.ReplicatedStorage.ModelLoader)
 local CameraModule = require(game.ReplicatedStorage.Camera)
 local WeldModule = require(game.ReplicatedStorage.Weld)
 
-local Camera = CameraModule.new(Vector3.new(0,5,0), Vector3.zero, 1/50, "Freecam")
-local World = Engine3D.new(script.Parent.Screen, Vector2.new(128,128), Camera, 70, 1000, false)
+local Camera = CameraModule.new(Vector3.new(0,5,0), Vector3.new(0, 0, 0), 1/50, true)
+local World = Engine3D.new(script.Parent.Parent.Screen, Camera, Vector2.new(256, 200), 70, 1000, false)
 
 local Torso = ModelLoader.LoadFromName("Cube")
 local Arm = ModelLoader.LoadFromName("Cube")
@@ -59,7 +59,7 @@ Arm.Size = Vector3.new(1,2,1)
 
 local Joint = WeldModule.new("Shoulder", Torso, Arm, CFrame.new(0,0,0), CFrame.new(0,0,0))
 
-game:GetService("RunService").RenderStepped:Connect(function()
+game:GetService("RunService").RenderStepped:ConnectParallel(function()
 	Joint.C0 = Joint.C0 * CFrame.Angles(math.rad(1), 0, 0)
 	Camera:Update()
 	World:Update()
@@ -72,13 +72,13 @@ local Engine3D = require(game.ReplicatedStorage.Engine3D)
 local ModelLoader = require(game.ReplicatedStorage.ModelLoader)
 local CameraModule = require(game.ReplicatedStorage.Camera)
 
-local Camera = CameraModule.new(Vector3.new(0,5,0), Vector3.zero, 1/50, "Freecam")
-local World = Engine3D.new(script.Parent.Screen, Vector2.new(128,128), Camera, 70, 1000, false)
+local Camera = CameraModule.new(Vector3.new(0,5,0), Vector3.new(0, 0, 0), 1/50, true)
+local World = Engine3D.new(script.Parent.Parent.Screen, Camera, Vector2.new(256, 200), 70, 1000, false)
 
 local Sound = workspace.Sound
 local Cube = ModelLoader.LoadFromName("Cube")
 
-game:GetService("RunService").RenderStepped:Connect(function()
+game:GetService("RunService").RenderStepped:ConnectParallel(function()
 	Cube.Size = Vector3.new(1, (Sound.PlaybackLoudness/100) + 0.1, 1)
 	Camera:Update()
 	World:Update()
