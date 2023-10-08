@@ -12,10 +12,10 @@ Check the latest release and the Wiki.
 - And much more!
 
 ## Other Information
-To draw to the screen on Roblox, my engine uses the [CanvasDraw] module. I do not own this module, and it is only as optimized as the creator made it to be.
+To render textures and read them inside roblox, my engine uses the [CanvasDraw] module. I do not own this module, and it is only as optimized as the creator made it to be.
 This also uses ported code from Python which this guy made: https://www.youtube.com/c/@FinFet.
 I will probably be updating this repository to fix other bugs or use other methods. If you are using this, __please credit me__.
-> Note: This engine is not perfect, it still needs to be optimized more. Large amounts of triangles impact performance, and so does a lot of colors at once.
+> Note: ~~This engine is not perfect, it still needs to be optimized more~~ Like it can even be optimized more lmao it uses multithreading, native code, and DynamicImage.
 
 ![blast](Screenshots/blast.png)
 
