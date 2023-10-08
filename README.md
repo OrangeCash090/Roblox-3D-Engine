@@ -1,6 +1,6 @@
 # Roblox-3D-Engine
 A satisfactory 3D Engine that works for roblox.\
-Check the latest release.
+Check the latest release and the Wiki.
 
 ## Features
 - Object File loading
