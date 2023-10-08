@@ -13,9 +13,9 @@ Check the latest release and the Wiki.
 
 ## Other Information
 To render textures and read them inside roblox, my engine uses the [CanvasDraw] module. I do not own this module, and it is only as optimized as the creator made it to be.
-This also uses ported code from Python which this guy made: https://www.youtube.com/c/@FinFet.
+This also uses ported code from Python which this guy made: https://www.youtube.com/c/@FinFet. It also uses a triangle clipping function that was ported from this guy's ConsoleGameEngine: https://www.youtube.com/c/@javidx9.
 I will probably be updating this repository to fix other bugs or use other methods. If you are using this, __please credit me__.
-> Note: ~~This engine is not perfect, it still needs to be optimized more~~ Like it can even be optimized more lmao it uses multithreading, native code, and DynamicImage.
+> Note: ~~This engine is not perfect, it still needs to be optimized more~~ Like it can be optimized more lmao it uses multithreading, native code, and DynamicImage.
 
 ![blast](Screenshots/blast.png)
 
