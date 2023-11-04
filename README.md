@@ -1,6 +1,7 @@
 # Roblox-3D-Engine
 A satisfactory 3D Engine that works for roblox.\
-Check the latest release and the Wiki.
+Check the latest release and the Wiki.\
+NOTICE: THIS PROJECT IS POSTPONED UNTIL DYNAMICIMAGE/EDITABLEIMAGE IS RELEASED PUBLICLY.
 
 ## Features
 - Object File loading
